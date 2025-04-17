@@ -50,4 +50,14 @@ new pages are not reloaded ---- existing components are replaced with new ones
 // What is the difference between dependencies and devDependencies?
 // Difference between package.json and package-lock.json?
 
+// What are components in React?
+
+// Two types of components in React
+
+// Class Based components ---- old way
+// Functional Components ---- new way
+
+// Functional component is a simple JS function which returns JSX
+
+// Props --- properties which you pass to any component
 
