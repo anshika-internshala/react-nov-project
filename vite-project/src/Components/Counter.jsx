@@ -6,8 +6,14 @@ function Counter() {
 
   function updateValue() {
     // count++;
-    setCount(count + 1);
+    setCount((count) => count + 2); // 0+ 1 = 1
+    setCount((count) => count + 1); // 0 + 1 = 1
+    setCount((count) => count + 1);
+    setCount((count) => count + 1);
+    setCount((count) => count + 2); // 0
     //console.log("count", count);
+
+    // Batch Updates in React ====> one re-render
   }
 
   return (
