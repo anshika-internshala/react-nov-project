@@ -1,16 +1,13 @@
 import Header from "./Components/Header";
 import Body from "./Components/Body";
 import Footer from "./Components/Footer";
-import ToDo from "./Components/ToDo";
-import Counter from "./Components/Counter";
 
 function App() {
   return (
     <>
-      {/* <Header />
+      <Header />
       <Body />
-      <Footer /> */}
-      <Counter />
+      <Footer />
     </>
   );
 }

@@ -2,13 +2,13 @@ function RestaurantCard(props) {
   return (
     <div className="m-8">
       <img
-        src={props.resDetails.image}
+        src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${props.resDetails.cloudinaryImageId}`}
         alt=""
         className="w-70 h-48 rounded-2xl"
       />
       <h1 className="font-bold">{props.resDetails.name}</h1>
-      <span className="font-bold">{props.resDetails.rating}</span>
-      <span> {props.resDetails.deliveryTime}</span>
+      <span className="font-bold">{props.resDetails.avgRating}</span>
+      <span> {props.resDetails.sla.slaString}</span>
       <p> {props.resDetails.cuisines}</p>
     </div>
   );
