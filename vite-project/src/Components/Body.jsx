@@ -1,6 +1,7 @@
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Search from "./Search";
+import { Link } from "react-router-dom";
 
 function Body() {
   const [allRestaurants, setAllRestaurants] = useState([]);
@@ -20,15 +21,18 @@ function Body() {
       .then((response) => response.json())
       .then((data) => {
         console.log(
-          data.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
+          data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+            ?.restaurants
         );
 
         setAllRestaurants(
-          data.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
+          data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+            ?.restaurants
         );
 
         setFilteredRestaurants(
-          data.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
+          data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+            ?.restaurants
         );
       });
   }, []);
@@ -78,7 +82,9 @@ function Body() {
       />
       <div className="flex flex-wrap w-9/12 m-auto">
         {filteredRestaurants.map((restaurant) => (
-          <RestaurantCard resDetails={restaurant.info} />
+          <Link to={`/restaurant/${restaurant.info.id}`}>
+            <RestaurantCard resDetails={restaurant.info} />
+          </Link>
         ))}
       </div>
     </>
