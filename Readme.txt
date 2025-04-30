@@ -61,3 +61,52 @@ new pages are not reloaded ---- existing components are replaced with new ones
 
 // Props --- properties which you pass to any component
 
+// Hooks ---- inbuilt JS functions in React
+// "use"
+
+// "useState" Hook ---- creating state variables in React
+
+// local variables ---- var , let , const
+
+// Why do we need keys in React?
+// Why we should not use index as keys ?
+
+// useEffect Hook
+
+// API Call ----> client (UI)----- server ------- database (restaurants)
+
+// These API calls are asynchronous operations
+
+// synchronous
+
+// Body component ---> API call ---- 100ms ----- component will rendered
+
+// Body component ----> render component ----> API Call
+
+// useEffect Hook --- gets executed after component is rendered( mounted)
+
+// we should not make unnecessary API calls
+// Empty dependency array ----> useEffect code will run only once
+// if you have dependency in your dependency array ----> whenever that dependency will change , your useEffect will run
+
+// useMemo Hook --- optimisation purpose
+
+// If my component is doing some expensive calculation , then on every state change
+// on every component rerender , this expensive calculation will take place
+
+// We should basically memoise the expensive calculation
+
+// useMemo is a React Hook that lets you cache the result of a calculation between re-renders.
+
+// Reference Variables ---- local variables , state variables, reference variales
+// Ref variables are used for storing the information between re-renders
+
+// Hooks --- JS functions
+// Custom Hooks --- ?
+
+// Mounting vs Unmounting
+
+// Mounting ---> component is rendered on DOM
+// UnMounting ----> component is removed from DOM
+
+// Routing ----> client side routing , SPA
