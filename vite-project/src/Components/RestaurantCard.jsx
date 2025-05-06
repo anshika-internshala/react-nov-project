@@ -1,4 +1,8 @@
+import userContext from "../utils/userContext";
+import { useContext } from "react";
+
 function RestaurantCard(props) {
+  const userData = useContext(userContext);
   return (
     <div className="m-8">
       <img
@@ -10,6 +14,7 @@ function RestaurantCard(props) {
       <span className="font-bold">{props.resDetails.avgRating}</span>
       <span> {props.resDetails.sla.slaString}</span>
       <p> {props.resDetails.cuisines}</p>
+      <p>{userData.loggedInUser}</p>
     </div>
   );
 }

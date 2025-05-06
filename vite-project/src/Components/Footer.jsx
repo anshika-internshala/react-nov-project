@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer class="bg-white rounded-lg shadow-sm dark:bg-gray-900 m-4 fixed bottom-0 w-full">
+    <footer class="bg-white rounded-lg shadow-sm dark:bg-gray-900 m-4 w-full">
       <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
         <div class="sm:flex sm:items-center sm:justify-between">
           <a

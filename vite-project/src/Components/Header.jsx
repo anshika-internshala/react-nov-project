@@ -5,9 +5,16 @@ import { IoPersonOutline } from "react-icons/io5";
 import { FaShoppingCart } from "react-icons/fa";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { Link } from "react-router-dom";
+import userContext from "../utils/userContext";
+import { useContext } from "react";
+import { useSelector } from "react-redux";
 
 function Header() {
   const isOnline = useOnlineStatus();
+  const userData = useContext(userContext);
+
+  const cartItems = useSelector((store) => store.cart.items);
+  console.log("userData", userData);
   return (
     <nav className="flex justify-around items-center border">
       <img
@@ -17,6 +24,7 @@ function Header() {
         height="70px"
       />
       <ul className="flex">
+        <li>{userData.loggedInUser}</li>
         <li>{isOnline ? "🟢 " : "🔴 "} </li>
         <li className="mx-4">
           <Link to="/">Home</Link>
@@ -37,6 +45,7 @@ function Header() {
         </li>
         <FaShoppingCart className="mt-1" />
         <li className="ml-4">Cart</li>
+        <li> {cartItems.length}</li>
       </ul>
     </nav>
   );

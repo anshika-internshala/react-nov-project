@@ -2,11 +2,15 @@ import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Search from "./Search";
 import { Link } from "react-router-dom";
+import userContext from "../utils/userContext";
+import { useContext } from "react";
 
 function Body() {
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [isClicked, setIsClicked] = useState(false);
+
+  const userData = useContext(userContext);
 
   console.log("Body Component");
 
@@ -20,8 +24,9 @@ function Body() {
     )
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         console.log(
-          data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+          data?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
             ?.restaurants
         );
 
@@ -80,6 +85,11 @@ function Body() {
         allRestaurants={allRestaurants}
         searchFunction={setSearchRestaurants}
       />
+      <input
+        type="text"
+        className="border mx-2"
+        onChange={(e) => userData.setUserName(e.target.value)}
+      ></input>
       <div className="flex flex-wrap w-9/12 m-auto">
         {filteredRestaurants.map((restaurant) => (
           <Link to={`/restaurant/${restaurant.info.id}`}>
