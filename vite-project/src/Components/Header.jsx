@@ -15,6 +15,8 @@ function Header() {
 
   const cartItems = useSelector((store) => store.cart.items);
   console.log("userData", userData);
+
+  const totalItems = cartItems.reduce((acc, curr) => acc + curr.quantity, 0);
   return (
     <nav className="flex justify-around items-center border">
       <img
@@ -44,8 +46,10 @@ function Header() {
           <Link to="/signIn">SignIn</Link>
         </li>
         <FaShoppingCart className="mt-1" />
-        <li className="ml-4">Cart</li>
-        <li> {cartItems.length}</li>
+        <li className="ml-4">
+          <Link to="/cart">Cart</Link>
+        </li>
+        <li> {totalItems}</li>
       </ul>
     </nav>
   );

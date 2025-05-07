@@ -7,8 +7,13 @@ import Help from "./Components/Help.jsx";
 import SignIn from "./Components/SignIn.jsx";
 import Body from "./Components/Body.jsx";
 import Error from "./Components/Error.jsx";
-import RestaurantDetails from "./Components/RestaurantDetails.jsx";
 import RealTimeClock from "./Components/RealTimeClock.jsx";
+import { lazy, Suspense } from "react";
+
+const Cart = lazy(() => import("./Components/Cart.jsx"));
+const RestaurantDetails = lazy(() =>
+  import("./Components/RestaurantDetails.jsx")
+);
 
 const appRouter = createBrowserRouter([
   {
@@ -34,11 +39,24 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/restaurant/:id",
-        element: <RestaurantDetails />,
+        element: (
+          <Suspense>
+            <RestaurantDetails />
+          </Suspense>
+        ),
       },
       {
         path: "/clock",
         element: <RealTimeClock />,
+      },
+
+      {
+        path: "/cart",
+        element: (
+          <Suspense fallback={<h1>Loading....</h1>}>
+            <Cart />
+          </Suspense>
+        ),
       },
     ],
   },

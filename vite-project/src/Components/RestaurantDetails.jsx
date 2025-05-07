@@ -22,7 +22,7 @@ function RestaurantDetails() {
         // );
 
         setMenuItems(
-          data?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]
+          data?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]
             ?.card?.card?.itemCards
         );
       });
@@ -49,11 +49,12 @@ function RestaurantDetails() {
             />
 
             <button
-              className="border bg-green-300 h-8 relative top-16 right-5"
+              className="border bg-green-300 h-8 relative top-16 right-5 w-[20%]"
               onClick={() => handleAddItem(res)}
             >
               Add +
             </button>
+            <span>{res.quantity}</span>
           </div>
         );
       })}
